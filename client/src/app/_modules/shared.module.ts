@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -16,7 +17,16 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true,
     }),
     NgxGalleryModule,
+    NgxSpinnerModule.forRoot({
+      type: 'line-scale-party',
+    }),
   ],
-  exports: [BsDropdownModule, ToastrModule, TabsModule, NgxGalleryModule],
+  exports: [
+    BsDropdownModule,
+    ToastrModule,
+    TabsModule,
+    NgxGalleryModule,
+    NgxSpinnerModule,
+  ],
 })
 export class SharedModule {}
